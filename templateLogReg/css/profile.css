@@ -1,0 +1,29 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: lavenderblush;
+    color: darkgrey;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 4%;
+}
+
+.login-info {
+    border: 2px solid lavender;
+    background-color: lavender;
+    border-radius: 9px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#logout {
+    text-decoration: none;
+    color: mediumpurple;
+    border: 2px solid khaki;
+    border-radius: 9px;
+    background-color: khaki;
+    padding: 10px;
+}
+
+#logout:hover {
+    color: plum;
+}

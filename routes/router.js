@@ -69,7 +69,28 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+          return res.send(
+              '<!DOCTYPE html>'
+              +'<html>'
+              +'<head>'
+              +'<title>Profile</title>'
+              +'<link href="css/profile.css" rel="stylesheet" type="text/css" media="all" />'
+              +'</head>'
+              +'<body>'
+              +'<section>'
+              +'<div class="login-info">'
+              +'<h3>Name: </h3>' + '<p>' + user.username + '</p>'
+              +'<h3>E-Mail: </h3>' + '<p>' + user.email + '</p>'
+              +'</div>'
+              +'</section>'
+              +'<br/>'
+              +'<br/>'
+              +'<footer>'
+              +'<a type="button" href="/logout" id="logout">logout</a>'
+              +'</footer>'
+              +'</body>'
+              +'</html>'
+          )
         }
       }
     });

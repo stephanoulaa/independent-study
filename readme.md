@@ -1,3 +1,3 @@
 -make license when done
 
--use "nodemon new-auth" to run
+-use "nodemon independent-study" to run
