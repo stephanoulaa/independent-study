@@ -1,9 +1,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     /* previously: lavenderblush */
-    background-color: rosybrown;
-    /* previously: darkgrey */
-    color: black;
+    background-color: plum;
+    color: gray;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 4%;
@@ -11,17 +10,23 @@ body {
 
 .login-info {
     /* previously: lavender */
-    border: 2px solid cadetblue;
-    background-color: cadetblue;
+    border: 2px solid lavender;
+    background-color: lavender;
     border-radius: 9px;
     text-align: left;
     padding-left: 10px;
 }
 
-.NEW-section {
-    border: 2px solid mediumpurple;
-    background-color: mediumpurple;
+.row {
+    display: flex;
+}
+
+.wrapper {
+    border: 2px solid powderblue;
+    background-color: powderblue;
     border-radius: 9px;
+    margin-left: 10px;
+    flex: 50%;
 }
 
 #logout {
@@ -36,5 +41,5 @@ body {
 }
 
 #logout:hover {
-    color: plum;
+    color: palevioletred;
 }

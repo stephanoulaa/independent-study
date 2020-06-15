@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var path = require('path');
 
 
 // GET route for reading data
@@ -69,41 +70,7 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.send(
-              '<!DOCTYPE html>'
-              +'<html lang="en" ng-app="VideoTweetStream">'
-              +'<head>'
-              +'<title>Profile</title>'
-              +'<link href="css/profile.css" rel="stylesheet" type="text/css" media="all" />'
-              +'</head>'
-              +'<body>'
-              +'<section>'
-              +'<div class="login-info">'
-              +'<h3>Name: </h3>' + '<p>' + user.username + '</p>'
-              +'<h3>E-Mail: </h3>' + '<p>' + user.email + '</p>'
-              +'</div>'
-              +'<br/>'
-              +'<!--twitter-->'
-              +'<!--source: https://support.twitter.com/articles/20170071-->'
-              +'<div class="twitter-div">'
-              +'<div class="twitter">'
-              +'<a class="twitter-timeline" data-width="300" data-height="600" data-theme="dark" data-link-color="#F5F8FA" href="https://twitter.com/coindesk">Tweets by coindesk</a> '
-              +'<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>'
-              +'</div>'
-              +'</div>'
-              +'<div class="NEW-section">'
-              +'<p>Hello</p>'
-              +'</div>'
-              +'</section>'
-              +'<br/>'
-              +'<br/>'
-              +'<footer>'
-              +'<a type="button" href="/logout" id="logout">logout</a>'
-              +'</footer>'
-              +'<br/>'
-              +'</body>'
-              +'</html>'
-          )
+            return res.sendFile(path.join(__dirname + '/../templateLogReg/profile.html'));
         }
       }
     });
