@@ -7,9 +7,10 @@
       <body>
           <section>
               <div class="login-info">
-                  <h4>username: username</h4>
-                  <h5>email: email</h5>
-                  
+                  <footer>
+                    <a type="button" href="/logout" id="logout">logout</a>
+                  </footer>
+                  <h1 id="welcome">Good Morning! <span>&#9788;</span></h1>
               </div>
               <br/>
               <!--twitter source: https://support.twitter.com/articles/20170071-->
@@ -22,10 +23,10 @@
                   
                   <div class="wrapper">
                     <header>
-                      <h2>To Do List</h2>
+                      <h2 id="to-do-title">to do list</h2>
                       <form id="registrar">
-                        <input type="text" name="name" placeholder="Invite Someone">
-                        <button type="submit" name="submit" value="submit">Submit</button>
+                        <input type="text" name="name" placeholder="new task">
+                        <button type="submit" name="submit" value="submit">add</button>
                       </form>
                     </header>
 
@@ -33,17 +34,11 @@
                       <ul id="invitedList"></ul>	
                     </div>
                   </div>
+                  
               </div>
+              
           </section>
-          
-          <br/>
-          <br/>
-          <footer>
-          <a type="button" href="/logout" id="logout">logout</a>
-          </footer>
-          
-          
-          
+                    
             <!--JS Script for the To Do List-->                  
             <script type="text/javascript">                  
             const form = document.getElementById('registrar');
@@ -56,7 +51,7 @@
             const filterLabel = document.createElement('label');
             const filterCheckbox = document.createElement('input');
 
-            filterLabel.textContent = "Hide those who haven't responded";
+            filterLabel.textContent = "hide completed tasks";
             filterCheckbox.type = 'checkbox';
             div.appendChild(filterLabel);
             div.appendChild(filterCheckbox);
@@ -68,9 +63,9 @@
                 for (let i=0; i<lis.length; i+=1) {
                   let li = lis[i];
                   if (li.className === 'responded') {
-                    li.style.display = '';
-                  } else {
                     li.style.display = 'none';
+                  } else {
+                    li.style.display = '';
                   }
                 }
               } else {
